@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Mouhamed Amine Baklouti, Data Engineering Student focused on building data foundations and automation.">
+    <meta property="og:title" content="Mouhamed Amine Baklouti | Data Engineer">
+    <meta property="og:description" content="Data engineering student focused on building the data foundations that teams rely on to make decisions.">
+    <meta property="og:type" content="website">
+    <title>Mouhamed Amine Baklouti | Data Engineer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon placeholder -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+</head>
+<body class="bg-black text-slate-300 font-sans antialiased selection:bg-teal-500/30 selection:text-teal-200">
+    
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-teal-400 font-mono font-bold text-xl tracking-tighter">
+            <a href="#hero" aria-label="Home">MAB</a>
+        </div>
+        
+        <nav class="hidden md:flex space-x-8 text-sm font-mono items-center">
+            <a href="#about" class="nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400">01.</span> About</a>
+            <a href="#skills" class="nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400">02.</span> Skills</a>
+            <a href="#experience" class="nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400">03.</span> Experience</a>
+            <a href="#projects" class="nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400">04.</span> Projects</a>
+            <a href="#contact" class="nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400">05.</span> Contact</a>
+        </nav>
+        
+        <button id="mobile-menu-btn" class="md:hidden text-teal-400 focus:outline-none p-2 z-50" aria-label="Toggle Menu">
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </button>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-900/95 backdrop-blur-md flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+            <nav class="flex flex-col space-y-8 text-center font-mono text-lg">
+                <a href="#about" class="mobile-nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400 block text-sm mb-1">01.</span> About</a>
+                <a href="#skills" class="mobile-nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400 block text-sm mb-1">02.</span> Skills</a>
+                <a href="#experience" class="mobile-nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400 block text-sm mb-1">03.</span> Experience</a>
+                <a href="#projects" class="mobile-nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400 block text-sm mb-1">04.</span> Projects</a>
+                <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-teal-400 transition-colors"><span class="text-teal-400 block text-sm mb-1">05.</span> Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-screen-xl mx-auto px-6 md:px-16 lg:px-24">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-start py-20 animate-fade-in relative">
+            <div class="hero-bg"></div>
+            <p class="font-mono text-teal-400 mb-4 ml-1 fade-up" style="--delay: 1">Hi, I'm</p>
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-100 mb-4 fade-up" style="--delay: 2">Mouhamed Amine Baklouti.</h1>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-400 mb-6 flex items-center fade-up h-[1.2em]" style="--delay: 3">
+                <span id="typing-text" class="text-slate-400"></span><span class="typing-cursor"></span>
+            </h2>
+            <p class="max-w-2xl text-lg md:text-xl text-slate-400 mb-10 leading-relaxed fade-up" style="--delay: 4">
+                Data engineering student focused on building the data foundations that teams rely on to make decisions.
+            </p>
+            <div class="flex flex-wrap gap-4 fade-up" style="--delay: 5">
+                <a href="#projects" class="px-7 py-4 rounded bg-teal-400/10 text-teal-400 font-mono border border-teal-400 hover:bg-teal-400/20 transition-all shadow-[0_0_15px_rgba(100,255,218,0.1)] hover:shadow-[0_0_20px_rgba(100,255,218,0.3)]">View My Work</a>
+                <a href="#contact" class="px-7 py-4 rounded bg-transparent text-slate-300 font-mono border border-slate-600 hover:border-slate-300 hover:text-slate-100 transition-colors">Get In Touch</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 max-w-4xl section-reveal">
+            <h2 class="section-title"><span class="text-teal-400 font-mono text-xl mr-2">01.</span> About Me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 mt-10">
+                <div class="text-slate-400 text-base leading-relaxed space-y-4">
+                    <p>
+                        Data engineering student focused on building the data foundations that teams rely on to make decisions. Hands-on experience across the full data lifecycle, from automated collection and cleaning to intelligent tools that turn raw information into usable answers.
+                    </p>
+                    <p>
+                        Eager to contribute to a team where data quality and automation drive real business impact.
+                    </p>
+                    <div class="mt-8">
+                        <h3 class="text-slate-200 font-semibold mb-3">Languages</h3>
+                        <ul class="flex flex-wrap gap-3 font-mono text-sm">
+                            <li class="bg-slate-800/50 px-3 py-1 rounded text-teal-300 border border-slate-700/50">Arabic (Native)</li>
+                            <li class="bg-slate-800/50 px-3 py-1 rounded text-teal-300 border border-slate-700/50">English (C1)</li>
+                            <li class="bg-slate-800/50 px-3 py-1 rounded text-teal-300 border border-slate-700/50">French (B2)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-card p-5 text-center">
+                            <div class="text-3xl font-bold text-teal-400 mb-1">2+</div>
+                            <div class="text-xs font-mono text-slate-400 uppercase tracking-wider">Internships</div>
+                        </div>
+                        <div class="glass-card p-5 text-center">
+                            <div class="text-3xl font-bold text-teal-400 mb-1">10K+</div>
+                            <div class="text-xs font-mono text-slate-400 uppercase tracking-wider">Records Automated</div>
+                        </div>
+                        <div class="glass-card p-5 text-center col-span-2">
+                            <div class="text-3xl font-bold text-teal-400 mb-1">40%</div>
+                            <div class="text-xs font-mono text-slate-400 uppercase tracking-wider">Manual Work Reduced</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-slate-200 mb-8">Education</h3>
+                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
+                    
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-5 h-5 rounded-full border-2 border-teal-400 bg-slate-900 group-hover:bg-teal-400 group-[.is-active]:bg-teal-400 shadow-[0_0_0_4px_rgba(15,23,42,1)] absolute left-0 md:left-1/2 -translate-x-1/2 translate-y-0 transition-colors z-10"></div>
+                        
+                        <div class="w-[calc(100%-2rem)] md:w-[calc(50%-2rem)] ml-8 md:ml-0 glass-card p-6 relative">
+                            <span class="font-mono text-xs text-teal-400 mb-2 block">2024 – Present</span>
+                            <h4 class="text-lg font-bold text-slate-100">Engineering Degree in Data Engineering</h4>
+                            <p class="text-sm text-slate-400 mb-3">ENET'COM (National School of Electronics and Telecommunications of Sfax)</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">Relevant Coursework: Databases & SQL, Data Warehousing, Big Data & Spark, Real-Time Data Analytics, MLOps, Distributed Systems, Algorithms & Data Structures, Statistics & Probability.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-5 h-5 rounded-full border-2 border-slate-600 bg-slate-900 group-hover:border-teal-400 group-hover:bg-teal-400 shadow-[0_0_0_4px_rgba(15,23,42,1)] absolute left-0 md:left-1/2 -translate-x-1/2 translate-y-0 transition-colors z-10"></div>
+                        
+                        <div class="w-[calc(100%-2rem)] md:w-[calc(50%-2rem)] ml-8 md:ml-0 glass-card p-6 relative">
+                            <span class="font-mono text-xs text-teal-400 mb-2 block">2022 – 2024</span>
+                            <h4 class="text-lg font-bold text-slate-100">Preparatory Classes</h4>
+                            <p class="text-sm text-slate-400 mb-3">Preparatory Institute for Engineering Studies of Monastir</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">Completed intensive preparatory studies in Mathematics and Physics.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 section-reveal">
+            <h2 class="section-title"><span class="text-teal-400 font-mono text-xl mr-2">02.</span> Skills & Technologies</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                <div class="glass-card p-6 h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-teal-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-200 mb-4">Programming</h3>
+                    <ul class="flex flex-wrap gap-2">
+                        <li class="skill-pill">Python</li>
+                        <li class="skill-pill">SQL</li>
+                        <li class="skill-pill">C</li>
+                        <li class="skill-pill">Scala</li>
+                        <li class="skill-pill">JavaScript</li>
+                        <li class="skill-pill">Java OOP</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card p-6 h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-teal-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-200 mb-4">Data Engineering</h3>
+                    <ul class="flex flex-wrap gap-2">
+                        <li class="skill-pill">ETL pipelines</li>
+                        <li class="skill-pill">Data cleaning</li>
+                        <li class="skill-pill">Preprocessing</li>
+                        <li class="skill-pill">Web scraping</li>
+                        <li class="skill-pill">OCR</li>
+                        <li class="skill-pill">Fuzzy matching</li>
+                        <li class="skill-pill">Data warehousing</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card p-6 h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-teal-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-200 mb-4">Machine Learning</h3>
+                    <ul class="flex flex-wrap gap-2">
+                        <li class="skill-pill">Supervised learning</li>
+                        <li class="skill-pill">Unsupervised learning</li>
+                        <li class="skill-pill">Model evaluation</li>
+                        <li class="skill-pill">Feature engineering</li>
+                        <li class="skill-pill">MLOps fundamentals</li>
+                        <li class="skill-pill">NLP</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card p-6 h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-teal-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M17 18h1"></path><path d="M13 18h1"></path><path d="M9 18h1"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-200 mb-4">Deep Learning</h3>
+                    <ul class="flex flex-wrap gap-2">
+                        <li class="skill-pill">Neural networks</li>
+                        <li class="skill-pill">CNN</li>
+                        <li class="skill-pill">Model training</li>
+                        <li class="skill-pill">PyTorch</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card p-6 h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-teal-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-200 mb-4">Tools</h3>
+                    <ul class="flex flex-wrap gap-2">
+                        <li class="skill-pill">Git</li>
+                        <li class="skill-pill">Docker</li>
+                        <li class="skill-pill">Linux</li>
+                        <li class="skill-pill">NumPy</li>
+                        <li class="skill-pill">Elasticsearch</li>
+                        <li class="skill-pill">FFmpeg</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card p-6 h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-teal-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m3 15 2 2 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-200 mb-4">Libraries & Frameworks</h3>
+                    <ul class="flex flex-wrap gap-2">
+                        <li class="skill-pill">Pandas</li>
+                        <li class="skill-pill">Matplotlib</li>
+                        <li class="skill-pill">scikit-learn</li>
+                        <li class="skill-pill">SciPy</li>
+                        <li class="skill-pill">FastAPI</li>
+                        <li class="skill-pill">Transformers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 max-w-4xl section-reveal">
+            <h2 class="section-title"><span class="text-teal-400 font-mono text-xl mr-2">03.</span> Experience</h2>
+            
+            <div class="mt-12 relative border-l-2 border-slate-700/50 pl-6 md:pl-8 space-y-12">
+                
+                <!-- Experience 1 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[39px] top-1 w-4 h-4 rounded-full bg-slate-900 border-2 border-teal-400"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-slate-200">AI / Data Science Intern <span class="text-teal-400">@ Sofrecom Tunisie</span></h3>
+                        <span class="font-mono text-sm text-slate-400 whitespace-nowrap mt-1 sm:mt-0">Jul 2026 – Aug 2026</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4 font-mono">Sfax, Tunisia</p>
+                    
+                    <ul class="list-none space-y-3 text-slate-400 mb-5">
+                        <li class="relative pl-6 before:content-['▹'] before:absolute before:left-0 before:text-teal-400 before:text-lg before:leading-tight">Delivered a working platform that replaces slow, costly manual transcription of meetings and interviews in French, Arabic and Tunisian dialect.</li>
+                        <li class="relative pl-6 before:content-['▹'] before:absolute before:left-0 before:text-teal-400 before:text-lg before:leading-tight">Speaker-labeled, searchable transcripts, translated into 100+ languages and exportable to PDF, TXT or JSON.</li>
+                        <li class="relative pl-6 before:content-['▹'] before:absolute before:left-0 before:text-teal-400 before:text-lg before:leading-tight">3 speech-recognition and 5 translation engines back each other up for reliability.</li>
+                        <li class="relative pl-6 before:content-['▹'] before:absolute before:left-0 before:text-teal-400 before:text-lg before:leading-tight">Added local mode so sensitive recordings stay on company machines, with no extra API cost.</li>
+                        <li class="relative pl-6 before:content-['▹'] before:absolute before:left-0 before:text-teal-400 before:text-lg before:leading-tight">Backed the backend with 30 automated tests.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4 font-mono text-xs">
+                        <span class="text-teal-300/80">Python</span>
+                        <span class="text-teal-300/80">FastAPI</span>
+                        <span class="text-teal-300/80">Whisper</span>
+                        <span class="text-teal-300/80">Deepgram</span>
+                        <span class="text-teal-300/80">PyTorch</span>
+                        <span class="text-teal-300/80">Hugging Face</span>
+                        <span class="text-teal-300/80">pyannote.audio</span>
+                        <span class="text-teal-300/80">Silero VAD</span>
+                        <span class="text-teal-300/80">Ollama</span>
+                        <span class="text-teal-300/80">SQLite</span>
+                        <span class="text-teal-300/80">FFmpeg</span>
+                        <span class="text-teal-300/80">pytest</span>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[39px] top-1 w-4 h-4 rounded-full bg-slate-900 border-2 border-slate-600 hover:border-teal-400 transition-colors"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-slate-200">Data Engineering Intern <span class="text-teal-400">@ Tradrly</span></h3>
+                        <span class="font-mono text-sm text-slate-400 whitespace-nowrap mt-1 sm:mt-0">Jul 2025 – Aug 2025</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4 font-mono">Mahdia, Tunisia</p>
+                    
+                    <ul class="list-none space-y-3 text-slate-400 mb-5">
+                        <li class="relative pl-6 before:content-['▹'] before:absolute before:left-0 before:text-teal-400 before:text-lg before:leading-tight">Removed ~40% of the team's manual data processing by automating intake from 5+ external sources.</li>
+                        <li class="relative pl-6 before:content-['▹'] before:absolute before:left-0 before:text-teal-400 before:text-lg before:leading-tight">Automated gathering of 10,000+ records per run.</li>
+                        <li class="relative pl-6 before:content-['▹'] before:absolute before:left-0 before:text-teal-400 before:text-lg before:leading-tight">Added cleaning and standardization steps so analysts received usable data without manual fixes.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4 font-mono text-xs">
+                        <span class="text-teal-300/80">Python</span>
+                        <span class="text-teal-300/80">Pandas</span>
+                        <span class="text-teal-300/80">Web Scraping</span>
+                        <span class="text-teal-300/80">ETL</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 section-reveal">
+            <h2 class="section-title"><span class="text-teal-400 font-mono text-xl mr-2">04.</span> Projects</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mt-10">
+                
+                <!-- Project 1 -->
+                <div class="project-card glass-card group relative p-8 h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="text-teal-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-200 mb-4 group-hover:text-teal-400 transition-colors">ParaPharmacy Price Comparison System</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Built a system that reads vendor catalogs from images automatically, replacing manual data entry. Matches duplicate products across vendors and delivers a comparison tool showing pricing gaps.
+                        </p>
+                    </div>
+                    <ul class="flex flex-wrap gap-3 font-mono text-xs text-slate-500">
+                        <li>OCR</li>
+                        <li>Elasticsearch</li>
+                        <li>Fuzzy matching</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card group relative p-8 h-full flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="text-teal-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <div class="bg-teal-400/10 text-teal-400 px-3 py-1 rounded-full text-xs font-medium border border-teal-400/20 flex items-center gap-1">
+                                🥈 2nd Place
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-200 mb-2 group-hover:text-teal-400 transition-colors">Bakery Intelligence Assistant</h3>
+                        <p class="text-xs font-mono text-teal-400/80 mb-4">AI Night Challenge 5th Edition</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Built an AI assistant that answers business questions in plain language, grounded in real company records to reduce wrong answers.
+                        </p>
+                    </div>
+                    <ul class="flex flex-wrap gap-3 font-mono text-xs text-slate-500">
+                        <li>PostgreSQL</li>
+                        <li>LLM</li>
+                        <li>RAG</li>
+                        <li>Embeddings</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 max-w-2xl mx-auto text-center section-reveal">
+            <p class="font-mono text-teal-400 mb-4"><span class="mr-2">05.</span> What's Next?</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-200 mb-6">Get In Touch</h2>
+            <p class="text-slate-400 mb-12 leading-relaxed">
+                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open.
+            </p>
+            
+            <a href="mailto:aminebaklouti56@gmail.com" class="inline-block px-8 py-4 rounded bg-transparent text-teal-400 font-mono text-sm border border-teal-400 hover:bg-teal-400/10 transition-all shadow-[0_0_15px_rgba(100,255,218,0.1)] hover:shadow-[0_0_20px_rgba(100,255,218,0.2)] mb-16">
+                Say Hello
+            </a>
+
+            <div class="flex flex-col items-center gap-6 mt-8 p-8 glass-card">
+                <div class="flex gap-8 items-center">
+                    <a href="mailto:aminebaklouti56@gmail.com" class="text-slate-400 hover:text-teal-400 transition-colors" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 4 10 8 10-8"></path></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/amine-baklouti" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-teal-400 transition-colors" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://github.com/bk-oss" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-teal-400 transition-colors" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    </a>
+                </div>
+                <div class="text-slate-400 font-mono text-sm">
+                    +216 56 047 202
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 text-center text-slate-500 font-mono text-sm border-t border-slate-800/50 mt-10">
+        <div class="flex flex-col items-center gap-2">
+            <p>Designed & Built by Mouhamed Amine Baklouti</p>
+            <div class="flex gap-4 mt-2">
+                <a href="https://github.com/bk-oss" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors">GitHub</a>
+                <span class="text-slate-700">|</span>
+                <a href="https://linkedin.com/in/amine-baklouti" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors">LinkedIn</a>
+            </div>
+            <p class="mt-2 text-xs">© 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
