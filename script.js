@@ -1,118 +1,106 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. Typing Animation ---
-    const typingTextElement = document.getElementById('typing-text');
-    const phrases = [
-        "Data Engineering Student",
-        "Building Data Foundations",
-        "Turning Raw Data Into Answers"
-    ];
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
-    
-    function typeEffect() {
-        const currentPhrase = phrases[phraseIndex];
-        
-        if (isDeleting) {
-            typingTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
-            charIndex--;
-            typingSpeed = 50; // Faster deleting
-        } else {
-            typingTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
-            charIndex++;
-            typingSpeed = 100; // Normal typing
-        }
-        
-        // Phrase complete
-        if (!isDeleting && charIndex === currentPhrase.length) {
-            isDeleting = true;
-            typingSpeed = 2000; // Pause at end of phrase
-        } 
-        // Deleting complete
-        else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            typingSpeed = 500; // Pause before new phrase
-        }
-        
-        setTimeout(typeEffect, typingSpeed);
-    }
-    
-    // Start typing animation after initial fade-up
-    setTimeout(typeEffect, 1000);
 
-    // --- 2. Navbar Scroll Effect & Active Links ---
+    // ─── Typing Animation ───
+    const el = document.getElementById('typing-text');
+    const phrases = [
+        'Data Engineering Student.',
+        'Building Data Foundations.',
+        'Turning Raw Data Into Answers.'
+    ];
+    let pi = 0, ci = 0, deleting = false;
+
+    function type() {
+        const phrase = phrases[pi];
+
+        if (deleting) {
+            el.textContent = phrase.substring(0, ci - 1);
+            ci--;
+        } else {
+            el.textContent = phrase.substring(0, ci + 1);
+            ci++;
+        }
+
+        let delay = deleting ? 40 : 80;
+
+        if (!deleting && ci === phrase.length) {
+            delay = 2200;   // pause at full phrase
+            deleting = true;
+        } else if (deleting && ci === 0) {
+            delay = 400;    // pause before next phrase
+            deleting = false;
+            pi = (pi + 1) % phrases.length;
+        }
+
+        setTimeout(type, delay);
+    }
+
+    setTimeout(type, 800);
+
+    // ─── Navbar scroll effect ───
     const navbar = document.getElementById('navbar');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
-    
-    window.addEventListener('scroll', () => {
-        // Blur background on scroll
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        // Highlight active link
+
+    function onScroll() {
+        // Blur on scroll
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+
+        // Active link
         let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= (sectionTop - sectionHeight / 3)) {
-                current = section.getAttribute('id');
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - s.clientHeight / 3) {
+                current = s.id;
             }
         });
-        
+
         navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
+            link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ─── Scroll reveal ───
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
             }
         });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -60px 0px'
     });
 
-    // --- 3. Scroll Reveal Animations (Intersection Observer) ---
-    const revealElements = document.querySelectorAll('.section-reveal');
-    
-    const revealOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    };
-    
-    const revealObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, revealOptions);
-    
-    revealElements.forEach(el => {
+    document.querySelectorAll('.section-reveal').forEach(el => {
         revealObserver.observe(el);
     });
 
-    // --- 4. Mobile Menu Toggle ---
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    // ─── Mobile menu ───
+    const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const hamburger = document.querySelector('.hamburger');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
     function toggleMenu() {
-        mobileMenu.classList.toggle('open');
+        const isOpen = mobileMenu.classList.toggle('open');
         hamburger.classList.toggle('open');
-        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     }
-    
-    mobileMenuBtn.addEventListener('click', toggleMenu);
-    
-    // Close menu when a link is clicked
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', toggleMenu);
+
+    menuBtn.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+    // ─── Smooth scroll for all anchor links ───
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
     });
+
 });
