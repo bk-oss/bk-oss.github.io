@@ -92,6 +92,22 @@ document.addEventListener('DOMContentLoaded', () => {
     menuBtn.addEventListener('click', toggleMenu);
     mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
+    // ─── Copy email ───
+    const copyBtn = document.getElementById('copy-email-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('aminebaklouti56@gmail.com').then(() => {
+                const textEl = copyBtn.querySelector('.copy-text');
+                copyBtn.classList.add('copied');
+                textEl.textContent = 'Copied!';
+                setTimeout(() => {
+                    textEl.textContent = 'Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    }
+
     // ─── Smooth scroll for all anchor links ───
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
